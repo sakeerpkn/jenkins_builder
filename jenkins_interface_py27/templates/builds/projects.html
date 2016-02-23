@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% if user.is_authenticated %}
+
+	{% block head %}Welcome {{user.username}}{% endblock %}
+	{% block content %}
+		<form action="." id="form" method="post">{% csrf_token %}
+
+			<table>
+				<tr>
+					<th>Job Name</th>
+					<th>Build Now</th>
+				</tr>
+				{% for job in jobs %}
+					<tr>
+						<td>{{job}}</td>
+						<td><input type="checkbox" id="job_{{job}}" name="jobs_name" value="{{job}}"></td>
+					</tr>
+				{% endfor %}
+			</table>
+			<input type="submit" value="Build">
+		</form>
+		</br>
+	    <a href="/logout/">Logout</a>
+		<script type="text/javascript">
+		function build_job(job_name){
+			alert(job_name)
+		}
+		</script>
+
+
+	{% endblock %}
+{% else %}
+    <p>Please <a href="/login/">login</a> to see this page.</p>
+{% endif %}
+
+

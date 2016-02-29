@@ -16,6 +16,7 @@ Including another URLconf
 
 from django.conf.urls import patterns, include, url
 from login.views import *
+
  
 urlpatterns = patterns('',
     url(r'^$', 'django.contrib.auth.views.login'),

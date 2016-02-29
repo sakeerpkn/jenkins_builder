@@ -1,12 +1,33 @@
-{% extends "base.html" %}
-{% block title %}User Registration{% endblock %}
-{% block head %}User Registration{% endblock %}
+{% extends "base/home.html" %}
 {% block content %}
-    <form method="post" action=".">{% csrf_token %}
-        <table border="0">
-            {{ form.as_table }}
-        </table>
-        <input type="submit" value="Register" />
-    </form>
-    <a href="/">Login</a>
+	<div class="reg-background">
+	{% if form.errors %}
+       <div class="error-msg">{{form.errors}}</div>
+      {% else %}
+      {% endif %}
+        <div class="loginwrapper">
+            <section class="reg-form">
+                <h1>User Registration </h1>
+                <form method="post" action=".">{% csrf_token %}
+                    <ul>
+                    <li>{{ form.username }}</li>
+                    <li>{{ form.email }}</li>
+                    <li>{{ form.password1 }}</li>
+                    <li>{{ form.password2 }}</li>
+                    </ul>
+                    <div class="form-inline">
+                        <div class="form-group pull-left">
+                            <a href="/" class="btn btn-login">Log in</a>
+                        </div>
+
+                        <div class="form-group pull-right">
+                            <button type="submit" class="btn btn-register">Register</button>
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
 {% endblock %}

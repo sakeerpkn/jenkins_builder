@@ -1,0 +1,395 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+/* line 5, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+input {
+  outline: none;
+}
+
+/* line 13, ../sass/screen.scss */
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* line 18, ../sass/screen.scss */
+.login-background {
+  width: 100%;
+  background: url(../images/backgroung-login.png);
+  background-size: cover;
+  height: 100%;
+  position: fixed;
+}
+
+/* line 26, ../sass/screen.scss */
+.reg-background {
+  width: 100%;
+  background: url(../images/backgroung-reg.png);
+  background-size: cover;
+  height: 100%;
+  position: fixed;
+}
+
+/* line 35, ../sass/screen.scss */
+.error-msg {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  top: 0;
+  background-color: rgba(255, 89, 0, 0.76);
+  padding: 10px;
+}
+
+/* line 45, ../sass/screen.scss */
+.erroractive {
+  border: 1px solid #F15050 !important;
+}
+
+/* line 49, ../sass/screen.scss */
+.loginwrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+}
+/* line 54, ../sass/screen.scss */
+.loginwrapper .reg-form {
+  height: 475px !important;
+}
+/* line 58, ../sass/screen.scss */
+.loginwrapper .login-form, .loginwrapper .reg-form {
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+/* line 68, ../sass/screen.scss */
+.loginwrapper .login-form h1, .loginwrapper .reg-form h1 {
+  font-size: 51px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 35px;
+  font-weight: bold;
+}
+/* line 76, ../sass/screen.scss */
+.loginwrapper .login-form ul li, .loginwrapper .reg-form ul li {
+  margin: 30px 0;
+}
+/* line 78, ../sass/screen.scss */
+.loginwrapper .login-form ul li input, .loginwrapper .reg-form ul li input {
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 300;
+  width: 100%;
+  border: 0px;
+  padding: 18px 60px;
+}
+/* line 85, ../sass/screen.scss */
+.loginwrapper .login-form ul li input.username, .loginwrapper .reg-form ul li input.username {
+  display: inline-block;
+  background: url(../images/Icons/ic-user.png) no-repeat 15px 50% rgba(255, 255, 255, 0.3);
+}
+/* line 90, ../sass/screen.scss */
+.loginwrapper .login-form ul li input.password, .loginwrapper .reg-form ul li input.password {
+  display: inline-block;
+  background: url(../images/Icons/ic-lock.png) no-repeat 15px 50% rgba(255, 255, 255, 0.3);
+}
+/* line 95, ../sass/screen.scss */
+.loginwrapper .login-form ul li input.email, .loginwrapper .reg-form ul li input.email {
+  background: url(../images/Icons/ic-mail.png) no-repeat 15px 50% rgba(255, 255, 255, 0.3);
+}
+/* line 98, ../sass/screen.scss */
+.loginwrapper .login-form ul li input.re-password, .loginwrapper .reg-form ul li input.re-password {
+  background: url(../images/Icons/ic-mail.png) no-repeat 15px 50% rgba(255, 255, 255, 0.3);
+}
+/* line 104, ../sass/screen.scss */
+.loginwrapper .login-form .form-inline, .loginwrapper .reg-form .form-inline {
+  margin-top: 50px;
+}
+/* line 108, ../sass/screen.scss */
+.loginwrapper .login-form .form-group, .loginwrapper .reg-form .form-group {
+  width: 47%;
+}
+/* line 110, ../sass/screen.scss */
+.loginwrapper .login-form .form-group .btn-login, .loginwrapper .reg-form .form-group .btn-login {
+  background-color: #0bd8f0;
+  padding: 15px 60px;
+  width: 100%;
+  border-radius: 50px;
+  color: #fff;
+}
+/* line 117, ../sass/screen.scss */
+.loginwrapper .login-form .form-group .btn-register, .loginwrapper .reg-form .form-group .btn-register {
+  border: 1px solid #0bd8f0;
+  padding: 15px 60px;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 50px;
+  color: #fff;
+}
+
+/* line 129, ../sass/screen.scss */
+.loginwrapper .login-form ul li input::-webkit-input-placeholder, .loginwrapper .reg-form ul li input::-webkit-input-placeholder {
+  color: #d5e7f4;
+}
+
+/* line 133, ../sass/screen.scss */
+.topbar {
+  background: #0b8be0;
+  padding: 10px 40px;
+}
+/* line 136, ../sass/screen.scss */
+.topbar h1 {
+  font-size: 27px;
+  font-weight: bold;
+  color: #fff;
+}
+/* line 142, ../sass/screen.scss */
+.topbar .dropdown button {
+  background-color: transparent;
+  border: 0px;
+}
+/* line 145, ../sass/screen.scss */
+.topbar .dropdown button .caret {
+  color: #fff;
+}
+/* line 149, ../sass/screen.scss */
+.topbar .dropdown .dropdown-menu {
+  min-width: 147px;
+}
+/* line 153, ../sass/screen.scss */
+.topbar .userdetail {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 156, ../sass/screen.scss */
+.topbar .userdetail h6 {
+  font-size: 14px;
+  color: #fff;
+  line-height: 20px;
+  float: left;
+  display: block;
+}
+/* line 163, ../sass/screen.scss */
+.topbar .userdetail span {
+  display: block;
+  font-size: 10px;
+  line-height: 20px;
+  color: #fff;
+}
+/* line 170, ../sass/screen.scss */
+.topbar .userdetail img {
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  float: left;
+}
+
+/* line 179, ../sass/screen.scss */
+.table-area {
+  background-color: #ebeff2;
+  padding: 40px;
+}
+/* line 182, ../sass/screen.scss */
+.table-area .table {
+  background-color: #fff;
+}
+/* line 184, ../sass/screen.scss */
+.table-area .table thead {
+  background: #0a7fcd;
+  color: #fff;
+  border: 0px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+/* line 193, ../sass/screen.scss */
+.table-area .table thead th {
+  padding: 20px 20px;
+}
+/* line 198, ../sass/screen.scss */
+.table-area .table tbody .second-row {
+  background-color: #f4f9fa;
+}
+/* line 202, ../sass/screen.scss */
+.table-area .table tbody tr td {
+  border: 0px;
+  font-size: 14px;
+  padding: 15px 20px;
+  vertical-align: middle;
+}
+/* line 207, ../sass/screen.scss */
+.table-area .table tbody tr td .btn-active {
+  border: 1px solid #15b374;
+  font-size: 14px;
+  color: #15b374;
+  background-color: transparent;
+}
+/* line 213, ../sass/screen.scss */
+.table-area .table tbody tr td .btn-selected {
+  border: 1px solid #ccd4da;
+  font-size: 14px;
+  background-color: transparent;
+  color: #615d5d;
+}
+/* line 220, ../sass/screen.scss */
+.table-area .table tbody tr td a {
+  font-size: 14px;
+}
+/* line 222, ../sass/screen.scss */
+.table-area .table tbody tr td a:hover {
+  text-decoration: none;
+}
+/* line 229, ../sass/screen.scss */
+.table-area .table tbody tr .btn-build {
+  background-color: #15b374;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* line 240, ../sass/screen.scss */
+.information-area {
+  padding: 40px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  line-height: 20px;
+  background-color: #ebeff2;
+}
+/* line 248, ../sass/screen.scss */
+.information-area ul li {
+  margin-bottom: 15px;
+}
+/* line 252, ../sass/screen.scss */
+.information-area h2 {
+  font-size: 18px;
+  color: #282828;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* line 258, ../sass/screen.scss */
+.information-area .information-list {
+  background: #fff;
+  margin-top: 20px;
+  padding: 20px;
+}
+/* line 262, ../sass/screen.scss */
+.information-area .information-list h6 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #282828;
+}
+/* line 267, ../sass/screen.scss */
+.information-area .information-list p {
+  font-size: 14px;
+}
+/* line 270, ../sass/screen.scss */
+.information-area .information-list a {
+  font-size: 14px;
+  color: #0b8be0;
+}
+/* line 273, ../sass/screen.scss */
+.information-area .information-list a:hover {
+  text-decoration: none;
+}
+
+/* line 279, ../sass/screen.scss */
+.table-area input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  background: url(../images/Icons/ic-check.png) no-repeat;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 288, ../sass/screen.scss */
+.table-area input[type="checkbox"]:checked {
+  width: 22px;
+  height: 22px;
+  background: url(../images/Icons/ic-checked.png) no-repeat;
+}
+
+/* line 293, ../sass/screen.scss */
+.btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default {
+  background-color: transparent;
+}
+
+/* line 297, ../sass/screen.scss */
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open > .dropdown-toggle.btn-default.focus, .open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover {
+  background: none;
+}

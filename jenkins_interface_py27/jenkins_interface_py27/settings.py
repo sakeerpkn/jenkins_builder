@@ -17,6 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 import django.contrib.auth
 django.contrib.auth.LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/projects'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -87,7 +88,7 @@ DATABASES = {
         'NAME': 'jenkins',
         'HOST' : 'localhost',
         'USER' : 'root',
-        'PASSWORD' : '1234'
+        'PASSWORD' : 'password'
     }
 }
 
@@ -138,4 +139,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+# STATIC_URL = BASE_DIR +'/templates/base/static/'
 STATIC_URL = '/static/'
+print ("STATIC_URL",STATIC_URL)
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(BASE_DIR, 'templates/base/static'),
+)

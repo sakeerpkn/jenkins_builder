@@ -1,36 +1,101 @@
-{% extends "base.html" %}
+{% extends "base/home.html" %}
+
 {% if user.is_authenticated %}
-
-	{% block head %}Welcome {{user.username}}{% endblock %}
 	{% block content %}
-		<form action="." id="form" method="post">{% csrf_token %}
+		<div class="container-fluid user-section">
+        	<div class="row topbar">
+	          <section class="pull-left">
+	              <h1>Jenkins </h1>
+	          </section>
+	           <section class="pull-right">
+	                <div class="dropdown">
+						<div class="userdetail">
+						    <img src="{{STATIC_URL}}images/Icons/ic-admin.png" alt="">
+					    	<h6>{{user.username}}</h6><span>Admin</span>
+						</div>
+					  	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    <span class="caret"></span>
+					  	</button>
+	                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	                     <li><a href="/logout/">Log out</a></li>
+	                   </ul>
+	                </div>
+	            </section>
+        	</div>
+	        {% if jobs %}
+	        	<form action="." id="form" method="post">{% csrf_token %}
+			        <div class="row table-area">
+			             <table class="table">
+			                <thead>
+			                  <tr>
+			                    <th>Job name</th>
+			                    <th>build now</th>
+			                    
+			                  </tr>
+			                </thead>
+			                <tbody>
+				                {% for job in jobs %}
+				                  <tr>
+				                    <td>{{job}}</td>
+				                     <td><label><input type="checkbox" id="job_{{job}}" name="jobs_name" value="{{job}}"> </label></td>
+				                    
+				                  </tr>
+				                {% endfor %}
+			                 	<tr> 
+			                    	<td class="second-row"><button type="submit" class="btn btn-build">Build</button></td>
+			              		</tr>
+		                	</tbody>
+		              	</table>
+		            </div>
+               </form>
+          {% elif builds %}
+          	{% for build in builds %}
+				<div class="row information-area">
+	                <h2>Last successful build information</h2>
+	                <div class="information-list">
+	                   <ul>
+	                       <li>
+	                        <h6>Job Name</h6>
+	                        <p>{{build.job_name}}</p>
+	                       </li>
+	                       
+	                       <li>
+	                           <h6>Last successful build number</h6>
+	                            <p>{{build.build_number}}</p>
+	                       </li>
+	                       
+	                        <li>
+	                        <h6>View link</h6>
+	                        <a href="{{build.build_url}}">{{build.build_url}}</a>
+	                        </li>
+	                 	</ul>
+                	</div>
+	        	</div>
+	        {% endfor %}
+		  {% else %}
+		  {% endif %}
+		
+			<script type="text/javascript">
+			function build_job(job_name){
+				alert(job_name)
+			}
+			</script>
 
-			<table>
-				<tr>
-					<th>Job Name</th>
-					<th>Build Now</th>
-				</tr>
-				{% for job in jobs %}
-					<tr>
-						<td>{{job}}</td>
-						<td><input type="checkbox" id="job_{{job}}" name="jobs_name" value="{{job}}"></td>
-					</tr>
-				{% endfor %}
-			</table>
-			<input type="submit" value="Build">
-		</form>
-		</br>
-	    <a href="/logout/">Logout</a>
-		<script type="text/javascript">
-		function build_job(job_name){
-			alert(job_name)
-		}
-		</script>
-
-
+	  
 	{% endblock %}
 {% else %}
     <p>Please <a href="/login/">login</a> to see this page.</p>
 {% endif %}
+              
+              
+              
+              
+              
+     
+    
+    
+
+    
+                  
 
 
